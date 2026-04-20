@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary-dark: #030712;
+  --color-accent-purple: #8b5cf6;
+  --color-accent-blue: #3b82f6;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-primary-dark)] text-slate-100 antialiased selection:bg-purple-500/30;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/3 backdrop-blur-xl border border-white/5 rounded-2xl;
+  }
+
+  .glow-bg {
+    @apply fixed inset-0 z-[-1] overflow-hidden pointer-events-none;
+  }
+
+  .glow-blob {
+    @apply absolute rounded-full filter blur-[120px] opacity-20 animate-pulse-slow;
+  }
+
+  .skill-tag {
+    @apply bg-purple-500/10 border border-purple-500/20 text-purple-300 transition-all duration-300;
+  }
+
+  .project-card {
+    @apply bg-white/3 backdrop-blur-xl border border-white/5 rounded-2xl transition-all duration-300 border-l-4 border-l-purple-500;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-br from-purple-500 to-indigo-600 shadow-lg shadow-purple-500/20 transition-all duration-200;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400;
+  }
+}
+
+.section-padding {
+  @apply py-24 px-6 md:px-12 lg:px-24;
+}
