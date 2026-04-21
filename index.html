@@ -1,8 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <meta http-equiv="refresh" content="0; url=https://ai.studio/apps/a4762dab-97d7-4c47-a4b4-e9a2a6c98157?fullscreenApplet=true">
+  <meta charset="UTF-8">
+  <title>Đặng Huỳnh Khánh</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 50px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #38bdf8;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .warning {
+      display: none;
+      background: #ef4444;
+      padding: 15px;
+      margin: 20px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
+
 <body>
+
+<div class="container">
+
+  <h1>Đặng Huỳnh Khánh</h1>
+
+  <!-- Cảnh báo Zalo -->
+  <div id="warning" class="warning">
+    ⚠️ Bạn đang mở bằng Zalo<br><br>
+    👉 Hãy bấm dấu ⋮ góc phải → chọn <b>"Mở bằng trình duyệt"</b>
+  </div>
+
+  <!-- Nút mở project -->
+  <button class="btn" onclick="openProject()">
+    🚀 Xem dự án
+  </button>
+
+</div>
+
+<script>
+  // kiểm tra nếu là Zalo
+  const ua = navigator.userAgent.toLowerCase();
+
+  if (ua.includes("zalo")) {
+    document.getElementById("warning").style.display = "block";
+  }
+
+  function openProject() {
+    window.open("https://ai.studio/apps/a4762dab-97d7-4c47-a4b4-e9a2a6c98157?fullscreenApplet=true", "_blank");
+  }
+</script>
+
 </body>
 </html>
